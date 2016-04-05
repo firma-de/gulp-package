@@ -1,0 +1,30 @@
+#
+#  Configuration for Circle CI
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#
+#  ◆ Keep configuration variables for CircleCI that will configure what the Circle CI
+#    will do.
+#
+#  » Documentation from Circle CI ( https://circleci.com/docs/configuration )
+#
+
+machine:
+  node:
+    version: 4.1.0
+  pre:
+    - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.6 10
+    - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.6 10
+    - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.9 20
+    - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.9 20
+
+
+test:
+  post:
+    - 'npm run-script report'
+
+deployment:
+  npm:
+    tag: /v[0-9]+(\.[0-9]+)*/
+    commands:
+      - 'echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc'
+      - 'npm publish --access public'

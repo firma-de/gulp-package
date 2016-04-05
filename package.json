@@ -1,0 +1,53 @@
+{
+  "files": [
+    "index.js"
+  ],
+  "dependencies": {
+    "deep-extend": "^0.4.1",
+    "detect-indent": "^4.0.0",
+    "gulp": "^3.9.0",
+    "gulp-file": "^0.2.0",
+    "gulp-gzip": "^1.2.0",
+    "gulp-tar": "^1.8.0",
+    "js-beautify": "^1.5.10",
+    "stream-combiner": "^0.2.2",
+    "through2": "^2.0.0",
+    "gulp-util": "^3.0.7"
+  },
+  "name": "@firma-de/gulp-package",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=4.2.0"
+  },
+  "author": {
+    "name": "firma.de",
+    "email": "techops@firma.de"
+  },
+  "contributors": [{
+    "name": "Ivan Drinchev",
+    "email": "drinchev@gmail.com"
+  }],
+  "main": "index.js",
+  "description": "Gulp module for packaging a NodeJS project for deployment",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp-decompress": "^1.2.0",
+    "gulp-exclude-gitignore": "^1.0.0",
+    "gulp-istanbul": "^0.10.3",
+    "gulp-mocha": "^2.2.0",
+    "gulp-nsp": "^2.3.0",
+    "gulp-plumber": "^1.0.1",
+    "should": "^8.1.1",
+    "temp": "^0.8.3",
+    "yeoman-assert": "^2.1.1",
+    "gulp-coveralls": "^0.1.4"
+  },
+  "scripts": {
+    "test": "gulp test",
+    "report": "gulp report"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:firma-de/gulp-package.git"
+  }
+}
